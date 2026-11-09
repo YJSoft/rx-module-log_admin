@@ -1,0 +1,8 @@
+<table name="log_admin_chain">
+	<column name="chain" type="varchar(20)" notnull="notnull" primary_key="primary_key" />
+	<column name="first_seq" type="bigint" notnull="notnull" default="1" />
+	<column name="last_seq" type="bigint" notnull="notnull" default="0" />
+	<column name="last_log_id" type="bigint" notnull="notnull" default="0" />
+	<column name="last_hash" type="varchar(40)" />
+	<column name="updated" type="datetime" notnull="notnull" />
+</table>

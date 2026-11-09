@@ -1,0 +1,17 @@
+<query id="getLastAccessLog" action="select">
+	<tables>
+		<table name="log_admin_access" />
+	</tables>
+	<columns>
+		<column name="log_id" />
+		<column name="seq" />
+		<column name="hash" />
+	</columns>
+	<conditions>
+		<condition operation="equal" column="chain" var="chain" notnull="notnull" />
+	</conditions>
+	<navigation>
+		<index default="seq" order="desc" />
+		<list_count default="1" />
+	</navigation>
+</query>

@@ -1,0 +1,11 @@
+<query id="getChainHead" action="select">
+	<tables>
+		<table name="log_admin_chain" />
+	</tables>
+	<columns>
+		<column name="*" />
+	</columns>
+	<conditions>
+		<condition operation="equal" column="chain" var="chain" notnull="notnull" />
+	</conditions>
+</query>

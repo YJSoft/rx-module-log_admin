@@ -1,0 +1,23 @@
+<query id="getAccessLogStatsByUser" action="select">
+	<tables>
+		<table name="log_admin_access" />
+	</tables>
+	<columns>
+		<column name="member_srl" />
+		<column name="max(user_id)" alias="user_id" />
+		<column name="max(nick_name)" alias="nick_name" />
+		<column name="count(*)" alias="count" />
+		<column name="count(distinct ipaddress)" alias="ip_count" />
+	</columns>
+	<conditions>
+		<condition operation="gte" column="regdate" var="start_date" notnull="notnull" />
+		<condition operation="lte" column="regdate" var="end_date" notnull="notnull" pipe="and" />
+	</conditions>
+	<groups>
+		<group column="member_srl" />
+	</groups>
+	<navigation>
+		<index default="count" order="desc" />
+		<list_count default="50" />
+	</navigation>
+</query>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module>
+	<grants>
+	</grants>
+	<actions>
+		<action name="dispLog_adminAdminList" class="Controllers\Admin" menu-name="log_admin" admin-index="true" />
+		<action name="dispLog_adminAdminDetail" class="Controllers\Admin" menu-name="log_admin" />
+		<action name="dispLog_adminAdminVerify" class="Controllers\Admin" menu-name="log_admin" />
+		<action name="dispLog_adminAdminReview" class="Controllers\Admin" menu-name="log_admin" />
+		<action name="dispLog_adminAdminConfig" class="Controllers\Admin" menu-name="log_admin" />
+		<action name="procLog_adminAdminSaveConfig" class="Controllers\Admin" />
+		<action name="procLog_adminAdminInsertReview" class="Controllers\Admin" />
+		<action name="procLog_adminAdminExport" class="Controllers\Admin" />
+	</actions>
+	<eventHandlers>
+		<eventHandler after="moduleHandler.proc" class="Controllers\EventHandlers" method="afterModuleHandlerProc" />
+		<eventHandler after="member.doLogin" class="Controllers\EventHandlers" method="afterDoLogin" />
+		<eventHandler before="member.doLogout" class="Controllers\EventHandlers" method="beforeDoLogout" />
+	</eventHandlers>
+	<menus>
+		<menu name="log_admin" type="all">
+			<title xml:lang="ko">개인정보 접속기록</title>
+			<title xml:lang="en">Personal Data Access Log</title>
+		</menu>
+	</menus>
+</module>

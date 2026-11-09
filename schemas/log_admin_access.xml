@@ -1,0 +1,28 @@
+<table name="log_admin_access">
+	<column name="log_id" type="bigint" notnull="notnull" primary_key="primary_key" auto_increment="auto_increment" />
+	<column name="chain" type="varchar(20)" notnull="notnull" />
+	<column name="seq" type="bigint" notnull="notnull" />
+	<column name="regdate" type="datetime" notnull="notnull" index="idx_regdate" />
+	<column name="member_srl" type="bigint" notnull="notnull" default="0" index="idx_member_srl" />
+	<column name="user_id" type="varchar(80)" />
+	<column name="nick_name" type="varchar(80)" />
+	<column name="user_role" type="varchar(20)" />
+	<column name="ipaddress" type="varchar(60)" notnull="notnull" index="idx_ipaddress" />
+	<column name="user_agent" type="varchar(250)" />
+	<column name="request_method" type="varchar(10)" />
+	<column name="request_url" type="text" />
+	<column name="module" type="varchar(80)" />
+	<column name="mid" type="varchar(80)" />
+	<column name="act" type="varchar(100)" index="idx_act" />
+	<column name="task_type" type="varchar(20)" notnull="notnull" index="idx_task_type" />
+	<column name="target_type" type="varchar(40)" />
+	<column name="target_srl" type="bigint" notnull="notnull" default="0" />
+	<column name="subject_member_srl" type="bigint" notnull="notnull" default="0" index="idx_subject_member_srl" />
+	<column name="subject_info" type="varchar(250)" />
+	<column name="result" type="varchar(10)" />
+	<column name="result_message" type="varchar(250)" />
+	<column name="request_vars" type="longtext" />
+	<column name="prev_hash" type="varchar(40)" notnull="notnull" />
+	<column name="hash" type="char(40)" notnull="notnull" />
+	<index name="unique_chain_seq" columns="chain,seq" type="unique" />
+</table>

@@ -1,0 +1,15 @@
+<query id="updateChainHeadLast" action="update">
+	<tables>
+		<table name="log_admin_chain" />
+	</tables>
+	<columns>
+		<column name="last_seq" var="last_seq" notnull="notnull" />
+		<column name="last_log_id" var="last_log_id" notnull="notnull" />
+		<column name="last_hash" var="last_hash" notnull="notnull" />
+		<column name="updated" var="updated" notnull="notnull" />
+	</columns>
+	<conditions>
+		<condition operation="equal" column="chain" var="chain" notnull="notnull" />
+		<condition operation="below" column="last_seq" var="last_seq" notnull="notnull" pipe="and" />
+	</conditions>
+</query>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="0.2">
+	<title xml:lang="ko">개인정보 접속기록 관리</title>
+	<title xml:lang="en">Personal Data Access Log</title>
+	<description xml:lang="ko">개인정보의 안전성 확보조치 기준(제5조·제8조)에 따라 관리자·모듈 관리자 등 개인정보취급자의 접속기록을 위·변조 방지 처리하여 저장·보관하고 점검할 수 있게 합니다.</description>
+	<description xml:lang="en">Records, protects (hash chain) and audits access logs of administrators and other personal data handlers.</description>
+	<version>1.0.0</version>
+	<date>2026-11-09</date>
+	<category>utility</category>
+	<license link="https://www.gnu.org/licenses/gpl-2.0.html">GPL-2.0</license>
+	<author email_address="yjsoft@yjsoft.xyz">
+		<name xml:lang="ko">YJSoft</name>
+		<name xml:lang="en">YJSoft</name>
+	</author>
+</module>

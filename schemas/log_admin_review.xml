@@ -1,0 +1,12 @@
+<table name="log_admin_review">
+	<column name="review_id" type="bigint" notnull="notnull" primary_key="primary_key" auto_increment="auto_increment" />
+	<column name="member_srl" type="bigint" notnull="notnull" default="0" />
+	<column name="user_id" type="varchar(80)" />
+	<column name="nick_name" type="varchar(80)" />
+	<column name="period_start" type="char(8)" notnull="notnull" />
+	<column name="period_end" type="char(8)" notnull="notnull" />
+	<column name="review_method" type="varchar(250)" />
+	<column name="findings" type="text" />
+	<column name="actions_taken" type="text" />
+	<column name="regdate" type="datetime" notnull="notnull" index="idx_regdate" />
+</table>

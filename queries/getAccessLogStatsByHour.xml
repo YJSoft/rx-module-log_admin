@@ -1,0 +1,16 @@
+<query id="getAccessLogStatsByHour" action="select">
+	<tables>
+		<table name="log_admin_access" />
+	</tables>
+	<columns>
+		<column name="hour(regdate)" alias="hour" />
+		<column name="count(*)" alias="count" />
+	</columns>
+	<conditions>
+		<condition operation="gte" column="regdate" var="start_date" notnull="notnull" />
+		<condition operation="lte" column="regdate" var="end_date" notnull="notnull" pipe="and" />
+	</conditions>
+	<groups>
+		<group column="hour(regdate)" />
+	</groups>
+</query>

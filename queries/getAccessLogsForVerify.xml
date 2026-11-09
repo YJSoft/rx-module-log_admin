@@ -1,0 +1,16 @@
+<query id="getAccessLogsForVerify" action="select">
+	<tables>
+		<table name="log_admin_access" />
+	</tables>
+	<columns>
+		<column name="*" />
+	</columns>
+	<conditions>
+		<condition operation="equal" column="chain" var="chain" notnull="notnull" />
+		<condition operation="excess" column="seq" var="after_seq" default="0" pipe="and" />
+	</conditions>
+	<navigation>
+		<index default="seq" order="asc" />
+		<list_count var="list_count" default="1000" />
+	</navigation>
+</query>

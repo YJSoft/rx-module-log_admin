@@ -1,0 +1,12 @@
+<query id="updateChainHeadFirst" action="update">
+	<tables>
+		<table name="log_admin_chain" />
+	</tables>
+	<columns>
+		<column name="first_seq" var="first_seq" notnull="notnull" />
+		<column name="updated" var="updated" notnull="notnull" />
+	</columns>
+	<conditions>
+		<condition operation="equal" column="chain" var="chain" notnull="notnull" />
+	</conditions>
+</query>

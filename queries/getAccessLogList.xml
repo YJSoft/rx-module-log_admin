@@ -1,0 +1,45 @@
+<query id="getAccessLogList" action="select">
+	<tables>
+		<table name="log_admin_access" />
+	</tables>
+	<columns>
+		<column name="log_id" />
+		<column name="chain" />
+		<column name="seq" />
+		<column name="regdate" />
+		<column name="member_srl" />
+		<column name="user_id" />
+		<column name="nick_name" />
+		<column name="user_role" />
+		<column name="ipaddress" />
+		<column name="request_method" />
+		<column name="module" />
+		<column name="mid" />
+		<column name="act" />
+		<column name="task_type" />
+		<column name="target_type" />
+		<column name="target_srl" />
+		<column name="subject_member_srl" />
+		<column name="subject_info" />
+		<column name="result" />
+		<column name="result_message" />
+	</columns>
+	<conditions>
+		<condition operation="gte" column="regdate" var="start_date" />
+		<condition operation="lte" column="regdate" var="end_date" pipe="and" />
+		<condition operation="equal" column="member_srl" var="member_srl" pipe="and" />
+		<condition operation="equal" column="user_id" var="user_id" pipe="and" />
+		<condition operation="like_prefix" column="ipaddress" var="ipaddress" pipe="and" />
+		<condition operation="equal" column="task_type" var="task_type" pipe="and" />
+		<condition operation="like" column="act" var="act" pipe="and" />
+		<condition operation="equal" column="subject_member_srl" var="subject_member_srl" pipe="and" />
+		<condition operation="equal" column="chain" var="chain" pipe="and" />
+		<condition operation="equal" column="result" var="result" pipe="and" />
+	</conditions>
+	<navigation>
+		<index var="sort_index" default="log_id" order="desc" />
+		<list_count var="list_count" default="30" />
+		<page_count var="page_count" default="10" />
+		<page var="page" default="1" />
+	</navigation>
+</query>

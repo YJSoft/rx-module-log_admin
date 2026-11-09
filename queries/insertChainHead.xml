@@ -1,0 +1,13 @@
+<query id="insertChainHead" action="insert">
+	<tables>
+		<table name="log_admin_chain" />
+	</tables>
+	<columns>
+		<column name="chain" var="chain" notnull="notnull" />
+		<column name="first_seq" var="first_seq" default="1" />
+		<column name="last_seq" var="last_seq" default="0" />
+		<column name="last_log_id" var="last_log_id" default="0" />
+		<column name="last_hash" var="last_hash" />
+		<column name="updated" var="updated" notnull="notnull" />
+	</columns>
+</query>
